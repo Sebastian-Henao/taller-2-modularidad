@@ -16,6 +16,11 @@ export class GamesService {
   /** URL base de la API externa de FreeToGame */
   private readonly apiUrl = 'https://www.freetogame.com/api/games';
 
+  /**
+   * Crea el servicio con el cliente HTTP de Angular.
+   *
+   * @param http Cliente utilizado para realizar peticiones a FreeToGame.
+   */
   constructor(private http: HttpClient) {}
 
   /**
