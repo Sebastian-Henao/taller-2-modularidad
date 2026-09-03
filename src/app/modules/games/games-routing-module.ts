@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListGamesComponent } from './pages/list-games/list-games.component';
 
 /**
  * Definición de rutas internas del módulo de juegos.
@@ -7,7 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'list-games',
-    loadComponent: undefined, // Se conectará al crear ListGamesComponent
+    component: ListGamesComponent,
   },
   {
     path: '**',
