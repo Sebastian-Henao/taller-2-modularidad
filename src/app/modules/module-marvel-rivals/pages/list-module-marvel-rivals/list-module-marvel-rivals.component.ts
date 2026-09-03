@@ -5,8 +5,7 @@ import { ModuleMarvelRivalsService } from '../../services/module-marvel-rivals.s
 @Component({
   selector: 'app-list-module-marvel-rivals.component',
   standalone: false,
-  templateUrl: './list-module-marvel-rivals.component.html',
-  styleUrl: './list-module-marvel-rivals.component.scss',
+  template: '<app-table-module-marvel-rivals [moduleMarvelRivals]="moduleMarvelRivals"></app-table-module-marvel-rivals>',
 })
 export class ListModuleMarvelRivalsComponent {
   moduleMarvelRivals: MarvelRivals[] = [];

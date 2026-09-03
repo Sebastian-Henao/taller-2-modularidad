@@ -1,1 +1,29 @@
-<p>table-module-marvel-rivals.component works!</p>
+<table class="table table-striped border">
+	<thead>
+		<tr>
+			<th scope="col">Id</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Alias</th>
+			<th scope="col">Equipo</th>
+			<th scope="col">Habilidad</th>
+			<th scope="col">Rol</th>
+		</tr>
+	</thead>
+	<tbody>
+		@for (personaje of moduleMarvelRivals; track personaje) {
+			<tr>
+				<th scope="row">{{ personaje.id }}</th>
+				<td>{{ personaje.nombre }}</td>
+				<td>{{ personaje.alias }}</td>
+				<td>{{ personaje.equipo }}</td>
+				<td>{{ personaje.habilidad }}</td>
+				<td>
+					<app-badge 
+						[text]="personaje.rol"
+						[type]="categoryMap[personaje.rol]" >
+					</app-badge>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
