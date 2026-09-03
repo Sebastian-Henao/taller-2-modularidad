@@ -1,0 +1,64 @@
+
+<main class="container py-4">
+	<header class="subtheme-card mb-4">
+		<h1 class="mb-2">Sistemas de diseño</h1>
+		<p class="text-muted mb-0">Docente: {{ sistemaDeDiseno.docente }}</p>
+	</header>
+
+	<section class="subtheme-card mb-4">
+		<h2>{{ sistemaDeDiseno.concepto.titulo }}</h2>
+		<p>{{ sistemaDeDiseno.concepto.descripcion }}</p>
+	</section>
+
+	<section class="mb-4">
+		<h2>{{ sistemaDeDiseno.utilidad.titulo }}</h2>
+		<div class="row g-3 subtheme-list">
+			@for (beneficio of sistemaDeDiseno.utilidad.beneficios; track beneficio.titulo) {
+				<article class="col-md-6 col-lg-4 subtheme-card">
+					<h3>{{ beneficio.titulo }}</h3>
+					<p>{{ beneficio.detalle }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section class="mb-4">
+		<h2>{{ sistemaDeDiseno.problemasSinSistema.titulo }}</h2>
+		<div class="row g-3 subtheme-list">
+			@for (punto of sistemaDeDiseno.problemasSinSistema.puntos; track punto.problema) {
+				<article class="col-md-6 subtheme-item">
+					<h3>{{ punto.problema }}</h3>
+					<p>{{ punto.detalle }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section class="mb-4">
+		<h2>Componentes clave</h2>
+		<div class="row g-3 subtheme-list">
+			@for (componente of sistemaDeDiseno.componentesClave; track componente.nombre) {
+				<article class="col-md-6 col-lg-4 subtheme-card">
+					<h3>{{ componente.nombre }}</h3>
+					<p>{{ componente.descripcion }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section>
+		<h2>Diseño atómico</h2>
+		<p class="subtheme-card">{{ sistemaDeDiseno.disenoAtomico.concepto }}</p>
+		<div class="row g-3 subtheme-list">
+			@for (nivel of sistemaDeDiseno.disenoAtomico.niveles; track nivel.nivel) {
+				<article class="col-md-6 col-lg-4 subtheme-card">
+					<h3>{{ nivel.nivel }}</h3>
+					<p>{{ nivel.descripcion }}</p>
+					@if (nivel.ejemplos?.length) {
+						<p><strong>Ejemplos:</strong> {{ nivel.ejemplos?.join(', ') }}</p>
+					}
+				</article>
+			}
+		</div>
+	</section>
+</main>

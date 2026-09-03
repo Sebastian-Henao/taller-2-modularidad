@@ -11,3 +11,32 @@
 tr th, tr td {
   text-align: center;
 }
+
+.subtheme-card,
+.subtheme-item {
+  background: #fff;
+  border: 1px solid rgba(13, 110, 253, 0.15);
+  border-radius: 0.9rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.subtheme-card {
+  height: 100%;
+  padding: 1rem 1rem 0.9rem;
+}
+
+.subtheme-item {
+  margin-bottom: 0.75rem;
+  padding: 0.9rem 1rem;
+}
+
+.subtheme-card:hover,
+.subtheme-item:hover {
+  box-shadow: 0 0.5rem 1rem rgba(15, 23, 42, 0.1);
+  transform: translateY(-1px);
+}
+
+.subtheme-list {
+  gap: 0.75rem;
+}
