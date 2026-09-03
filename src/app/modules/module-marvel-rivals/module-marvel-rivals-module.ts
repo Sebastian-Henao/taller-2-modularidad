@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { ModuleMarvelRivalsRoutingModule } from './module-marvel-rivals-routing-module';
 import { MarvelRivalsComponent } from './marvel-rivals.component';
 import { SharedModule } from '../shared/shared-module';
+import { ListModuleMarvelRivalsComponent } from './pages/list-module-marvel-rivals/list-module-marvel-rivals.component';
 
 
 @NgModule({
   declarations: [
-    MarvelRivalsComponent
+    MarvelRivalsComponent,
+    ListModuleMarvelRivalsComponent
   ],
   imports: [
     CommonModule,
