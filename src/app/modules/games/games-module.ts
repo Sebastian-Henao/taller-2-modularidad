@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { GamesRoutingModule } from './games-routing-module';
 import { GamesComponent } from './games.component';
 import { SharedModule } from '../shared/shared-module';
+import { TableGamesComponent } from './components/table-games/table-games.component';
 
 /**
  * Módulo funcional independiente para la gestión y presentación de juegos.
@@ -11,6 +12,7 @@ import { SharedModule } from '../shared/shared-module';
 @NgModule({
   declarations: [
     GamesComponent,
+    TableGamesComponent,
   ],
   imports: [
     CommonModule,
