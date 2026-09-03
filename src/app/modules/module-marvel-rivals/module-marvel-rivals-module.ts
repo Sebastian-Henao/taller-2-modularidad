@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ModuleMarvelRivalsRoutingModule } from './module-marvel-rivals-routing-module';
 import { MarvelRivalsComponent } from './marvel-rivals.component';
+import { SharedModule } from '../shared/shared-module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { MarvelRivalsComponent } from './marvel-rivals.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ModuleMarvelRivalsRoutingModule
   ]
 })
