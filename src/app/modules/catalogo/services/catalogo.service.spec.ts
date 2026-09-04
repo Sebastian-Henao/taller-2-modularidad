@@ -1,7 +1,5 @@
-import { provideHttpClient } from '@angular/common/http';
-import { provideHttpClientTesting, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { CATALOGO_CONFIG } from '../../../core/config/catalogo.config';
+import { CATALOGO_DATA } from '../../../core/config/catalogo.config';
 import { Catalogo } from '../interfaces/catalogo.interface';
 import { CatalogoService } from './catalogo.service';
 
@@ -9,34 +7,20 @@ import { CatalogoService } from './catalogo.service';
 describe('CatalogoService', () => {
   /** Servicio bajo prueba. */
   let service: CatalogoService;
-  /** Controlador de peticiones HTTP simuladas. */
-  let httpController: HttpTestingController;
-
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [provideHttpClient(), provideHttpClientTesting()],
-    });
+    TestBed.configureTestingModule({});
     service = TestBed.inject(CatalogoService);
-    httpController = TestBed.inject(HttpTestingController);
   });
-
-  afterEach(() => httpController.verify());
 
   /** Verifica que el servicio pueda ser inyectado. */
   it('debería crearse', () => {
     expect(service).toBeTruthy();
   });
 
-  /** Verifica que el servicio consulte el endpoint esperado. */
-  it('debería solicitar todos los juegos', () => {
-    const games: Catalogo[] = [];
-
+  /** Verifica que el servicio entregue los datos centrales. */
+  it('debería obtener todos los juegos del Core', () => {
     service.getAllGames().subscribe((response) => {
-      expect(response).toEqual(games);
+      expect(response).toEqual(CATALOGO_DATA);
     });
-
-    const request = httpController.expectOne(CATALOGO_CONFIG.apiUrl);
-    expect(request.request.method).toBe('GET');
-    request.flush(games);
   });
 });

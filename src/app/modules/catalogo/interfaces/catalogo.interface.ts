@@ -1,4 +1,4 @@
-/** Representa un videojuego recibido desde la API de FreeToGame. */
+/** Representa un videojuego disponible en el catálogo. */
 export interface Catalogo {
 	/** Identificador único del videojuego. */
 	id: number;
@@ -18,8 +18,8 @@ export interface Catalogo {
 	publisher: string;
 	/** Empresa desarrolladora del videojuego. */
 	developer: string;
-	/** Fecha de lanzamiento informada por la API. */
+	/** Fecha de lanzamiento del videojuego. */
 	release_date: string;
-	/** URL del perfil del videojuego en FreeToGame. */
+	/** URL del perfil externo del videojuego. */
 	freetogame_profile_url: string;
 }
