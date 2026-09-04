@@ -1,0 +1,269 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>uceva-angular-taller-modulos documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">uceva-angular-taller-modulos documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content readme">
+                   <div class="content-data">
+
+
+<h1>🧪 Taller: Módulos en Angular</h1>
+<ul>
+<li><p>Este proyecto fue generado utilizando <a href="https://github.com/angular/angular-cli">Angular CLI</a> 20.3.14.</p>
+</li>
+<li><p>El objetivo del taller es practicar la creación y organización de módulos y componentes en una aplicación Angular.</p>
+</li>
+</ul>
+<h2>📋 Requisitos Previos</h2>
+<p>Antes de iniciar, asegúrate de tener instaladas las siguientes herramientas:</p>
+<ul>
+<li>Node.js</li>
+<li>npm</li>
+<li>Angular CLI</li>
+<li>Git</li>
+<li>Visual Studio Code</li>
+</ul>
+<p>Puedes verificar Angular CLI en consola con: <code>ng version</code></p>
+<h2>▶️ Iniciar el Proyecto en Modo Desarrollo</h2>
+<p>Sigue estos pasos para ejecutar el proyecto localmente:</p>
+<h3>1️⃣ Abrir la consola</h3>
+<p>Ubícate en la raíz del proyecto (donde se encuentra el archivo package.json).</p>
+<h3>2️⃣ Instalar dependencias</h3>
+<p><code>npm i</code></p>
+<h3>3️⃣ Ejecutar el proyecto</h3>
+<p><code>npm run start</code> o <code>ng serve</code></p>
+<h3>4️⃣ Abrir en el navegador</h3>
+<p>Cuando el servidor esté en ejecución, abre un navegador y accede a: <code>http://localhost:4200/</code></p>
+<h2>🧪 Pruebas Unitarias</h2>
+<p>El proyecto utiliza Jest para la ejecución de pruebas unitarias.</p>
+<h3>▶️ Ejecutar pruebas una sola vez</h3>
+<p><code>npm run test</code></p>
+<h3>🔁 Ejecutar pruebas en modo watch</h3>
+<p>Este modo vuelve a ejecutar las pruebas cada vez que se detecta un cambio en el código.</p>
+<p><code>npm run test:watch</code></p>
+<h3>🔁 Ejecutar coverage de pruebas</h3>
+<p>Este modo permite ejecutar todas las pruebas unitarias del proyecto y generar un reporte de cobertura, el cual muestra qué porcentaje del código fuente está siendo validado por las pruebas.</p>
+<p><code>npm run test:coverage</code></p>
+<h3>📘 Generar documentación con Compodoc</h3>
+<p>Este modo permite generar la documentación técnica del proyecto a partir de los comentarios JSDoc en el código fuente, facilitando la visualización de la API del Design System y sus componentes.</p>
+<p>El comando genera un sitio estático con la documentación del proyecto, incluyendo componentes, interfaces, tipos, módulos y diagramas de dependencias.</p>
+<p><code>npm run compodoc</code></p>
+<h2>⚙️ Generación de Archivos con Angular CLI</h2>
+<p>A continuación se presentan los comandos más utilizados para generar módulos y componentes.</p>
+<h3>📦 Generar un módulo con archivo de rutas</h3>
+<p><code>ng g m [ruta]/[nombre-modulo] --routing</code></p>
+<h4>Ejemplo:</h4>
+<p><code>ng g m modules/users --routing</code></p>
+<h4>Archivos Generados</h4>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">src/app/modules/users
+├──users.module.ts
+└──users-routing.module.ts</code></pre></div><h3>🧩 Generar un componente (con carpeta propia)</h3>
+<p><code>ng g c [ruta]/[nombre-componente] --standalone=false</code></p>
+<h4>Ejemplo:</h4>
+<p><code>ng g c modules/users/components/table-users --standalone=false</code></p>
+<h4>Archivos Generados</h4>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">src/app/modules/users/components/table-users/
+├── table-users.html
+├── table-users.scss
+├── table-users.spec.ts
+└── table-users.ts</code></pre></div><h3>📄 Generar un componente sin carpeta (--flat)</h3>
+<p><code>ng g c [ruta]/[nombre-componente] --standalone=false --flat</code></p>
+<h4>Ejemplo:</h4>
+<p><code>ng g c modules/users/components/table-users/table-users.component --standalone=false --flat</code></p>
+<h4>Archivos Generados</h4>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">src/app/modules/users/components/table-users/
+├──table-users.component.html
+├──table-users.component.scss
+├──table-users.component.spec.ts
+└──table-users.component.ts</code></pre></div><h3>🎓 Observaciones Importantes</h3>
+<ul>
+<li>En este taller NO se utilizan componentes standalone</li>
+<li>Todos los componentes deben pertenecer a un NgModule</li>
+<li>Mantener una estructura clara favorece la escalabilidad y mantenibilidad</li>
+<li>Usar Angular CLI evita errores de configuración manual</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'readme';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
