@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Catalogo } from '../../interfaces/catalogo.interface';
 import { CatalogoService } from '../../services/catalogo.service';
 
+/** Opciones disponibles para filtrar el catálogo por plataforma. */
+export type CatalogoPlatformFilter = 'all' | 'pc' | 'browser';
+
 /**
  * Página principal del catálogo de videojuegos.
  *
@@ -17,7 +20,7 @@ export class ListCatalogoComponent {
   /** Juegos recibidos desde la API. */
   games: Catalogo[] = [];
   /** Filtro seleccionado por el usuario: todos, PC o navegador. */
-  selectedPlatform = 'all';
+  selectedPlatform: CatalogoPlatformFilter = 'all';
   /** Indica si la consulta HTTP todavía está en curso. */
   isLoading = true;
   /** Indica si ocurrió un error al consultar el catálogo. */

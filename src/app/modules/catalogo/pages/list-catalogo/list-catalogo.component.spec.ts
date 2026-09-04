@@ -42,6 +42,35 @@ describe('ListCatalogoComponent', () => {
     component.games = games;
   });
 
+  /** Verifica que la respuesta exitosa actualice el listado y el estado. */
+  it('debería cargar los juegos correctamente', () => {
+    const service = {
+      getAllGames: jest.fn().mockReturnValue({
+        subscribe: (observer: { next: (games: Catalogo[]) => void }) => observer.next(games),
+      }),
+    } as unknown as CatalogoService;
+    component = new ListCatalogoComponent(service);
+    component.ngOnInit();
+
+    expect(component.games).toEqual(games);
+    expect(component.isLoading).toBe(false);
+    expect(component.hasError).toBe(false);
+  });
+
+  /** Verifica que el error de la API active el estado de error. */
+  it('debería manejar errores al cargar los juegos', () => {
+    const service = {
+      getAllGames: jest.fn().mockReturnValue({
+        subscribe: (observer: { error: () => void }) => observer.error(),
+      }),
+    } as unknown as CatalogoService;
+    component = new ListCatalogoComponent(service);
+    component.ngOnInit();
+
+    expect(component.isLoading).toBe(false);
+    expect(component.hasError).toBe(true);
+  });
+
   /** Verifica que el filtro inicial conserve todos los resultados. */
   it('debería mostrar todos los juegos por defecto', () => {
     expect(component.filteredGames).toEqual(games);
