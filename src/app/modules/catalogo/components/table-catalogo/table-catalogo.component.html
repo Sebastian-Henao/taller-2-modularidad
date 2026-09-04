@@ -1,1 +1,23 @@
-<p>Catálogo pendiente de implementación.</p>
+<table>
+	<thead>
+		<tr>
+			<th>Juego</th>
+			<th>Género</th>
+			<th>Plataforma</th>
+			<th>Desarrollador</th>
+			<th>Acceso</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let game of games">
+			<td>
+				<img [src]="game.thumbnail" [alt]="game.title" width="80" />
+				{{ game.title }}
+			</td>
+			<td>{{ game.genre }}</td>
+			<td>{{ game.platform }}</td>
+			<td>{{ game.developer }}</td>
+			<td><a [href]="game.game_url" target="_blank" rel="noopener">Ver juego</a></td>
+		</tr>
+	</tbody>
+</table>

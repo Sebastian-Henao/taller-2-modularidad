@@ -1,1 +1,19 @@
-<app-table-catalogo></app-table-catalogo>
+<section>
+	<h1>Catálogo de videojuegos</h1>
+
+	<label for="platform">Filtrar por plataforma</label>
+	<select id="platform" [(ngModel)]="selectedPlatform">
+		<option value="all">Todas</option>
+		<option value="pc">PC</option>
+		<option value="browser">Navegador</option>
+	</select>
+
+	<p *ngIf="isLoading">Cargando juegos...</p>
+	<p *ngIf="hasError">No fue posible cargar el catálogo.</p>
+	<p *ngIf="!isLoading && !hasError && filteredGames.length === 0">No hay juegos para esta plataforma.</p>
+
+	<app-table-catalogo
+		*ngIf="!isLoading && !hasError"
+		[games]="filteredGames"
+	></app-table-catalogo>
+</section>
