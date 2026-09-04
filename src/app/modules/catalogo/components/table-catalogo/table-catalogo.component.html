@@ -1,24 +1,28 @@
-<!-- Tabla con la información principal de cada videojuego. -->
-<table>
+<table class="table table-striped border">
 	<thead>
 		<tr>
-			<th>Juego</th>
-			<th>Género</th>
-			<th>Plataforma</th>
-			<th>Desarrollador</th>
-			<th>Acceso</th>
+			<th scope="col">Id</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Descripción</th>
+			<th scope="col">Género</th>
+			<th scope="col">Plataforma</th>
+			<th scope="col">Publicador</th>
+			<th scope="col">Desarrollador</th>
+			<th scope="col">Fecha de lanzamiento</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr *ngFor="let game of games">
-			<td>
-				<img [src]="game.thumbnail" [alt]="game.title" width="80" />
-				{{ game.title }}
-			</td>
-			<td>{{ game.genre }}</td>
-			<td>{{ game.platform }}</td>
-			<td>{{ game.developer }}</td>
-			<td><a [href]="game.game_url" target="_blank" rel="noopener">Ver juego</a></td>
-		</tr>
+		@for (game of games; track game.id) {
+			<tr>
+				<th scope="row">{{ game.id }}</th>
+				<td>{{ game.title }}</td>
+				<td>{{ game.short_description }}</td>
+				<td>{{ game.genre }}</td>
+				<td>{{ game.platform }}</td>
+				<td>{{ game.publisher }}</td>
+				<td>{{ game.developer }}</td>
+				<td>{{ game.release_date }}</td>
+			</tr>
+		}
 	</tbody>
 </table>
