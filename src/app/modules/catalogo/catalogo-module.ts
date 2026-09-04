@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared-module';
 import { CatalogoRoutingModule } from './catalogo-routing-module';
 import { CatalogoComponent } from './catalogo.component';
@@ -19,6 +18,6 @@ import { ListCatalogoComponent } from './pages/list-catalogo/list-catalogo.compo
     ListCatalogoComponent,
     TableCatalogoComponent,
   ],
-  imports: [CommonModule, FormsModule, SharedModule, CatalogoRoutingModule],
+  imports: [CommonModule, SharedModule, CatalogoRoutingModule],
 })
 export class CatalogoModule {}

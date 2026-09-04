@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
-import { CATALOGO_PLATFORMS } from '../../../../core/config/catalogo.config';
 import { Catalogo } from '../../interfaces/catalogo.interface';
 import { CatalogoService } from '../../services/catalogo.service';
-
-/** Opciones disponibles para filtrar el catálogo por plataforma. */
-export type CatalogoPlatformFilter = 'all' | 'pc' | 'browser';
 
 /**
  * Página principal del catálogo de videojuegos.
  *
- * Coordina la carga de datos desde el servicio y aplica el filtro de
- * plataforma antes de enviar los resultados a la tabla.
+ * Coordina la carga de datos desde el servicio y envía los resultados
+ * a la tabla del catálogo.
  */
 @Component({
   selector: 'app-list-catalogo',
@@ -18,15 +14,11 @@ export type CatalogoPlatformFilter = 'all' | 'pc' | 'browser';
   templateUrl: './list-catalogo.component.html',
 })
 export class ListCatalogoComponent {
-  /** Opciones de plataforma definidas por la configuración del Core. */
-  readonly platforms = CATALOGO_PLATFORMS;
-  /** Juegos recibidos desde la API. */
+  /** Juegos recibidos desde el servicio del catálogo. */
   games: Catalogo[] = [];
-  /** Filtro seleccionado por el usuario: todos, PC o navegador. */
-  selectedPlatform: CatalogoPlatformFilter = 'all';
-  /** Indica si la consulta HTTP todavía está en curso. */
+  /** Indica si la carga de datos todavía está en curso. */
   isLoading = true;
-  /** Indica si ocurrió un error al consultar el catálogo. */
+  /** Indica si ocurrió un error al cargar el catálogo. */
   hasError = false;
 
   /**
@@ -47,18 +39,5 @@ export class ListCatalogoComponent {
         this.isLoading = false;
       },
     });
-  }
-
-  /**
-   * Devuelve los juegos que coinciden con la plataforma seleccionada.
-   * @returns Lista completa o lista filtrada de videojuegos.
-   */
-  get filteredGames(): Catalogo[] {
-    if (this.selectedPlatform === 'all') {
-      return this.games;
-    }
-
-    const platform = this.selectedPlatform === 'pc' ? 'PC' : 'Web Browser';
-    return this.games.filter((game) => game.platform.includes(platform));
   }
 }

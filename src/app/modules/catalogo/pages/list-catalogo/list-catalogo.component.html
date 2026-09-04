@@ -1,19 +1,14 @@
-<!-- Contenedor de la página y control de filtrado por plataforma. -->
+<!-- Contenedor de la página y estados de carga del catálogo. -->
 <section>
 	<h1>Catálogo de videojuegos</h1>
 
-	<label for="platform">Filtrar por plataforma</label>
-	<select id="platform" [(ngModel)]="selectedPlatform">
-		<option *ngFor="let platform of platforms" [value]="platform.value">{{ platform.label }}</option>
-	</select>
-
 	<p *ngIf="isLoading">Cargando juegos...</p>
 	<p *ngIf="hasError">No fue posible cargar el catálogo.</p>
-	<p *ngIf="!isLoading && !hasError && filteredGames.length === 0">No hay juegos para esta plataforma.</p>
+	<p *ngIf="!isLoading && !hasError && games.length === 0">No hay juegos disponibles.</p>
 
 	<!-- La tabla solo se muestra cuando la consulta terminó correctamente. -->
 	<app-table-catalogo
 		*ngIf="!isLoading && !hasError"
-		[games]="filteredGames"
+		[games]="games"
 	></app-table-catalogo>
 </section>

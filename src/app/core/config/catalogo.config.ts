@@ -1,8 +1,7 @@
 /**
  * Configuración central del módulo de catálogo.
  *
- * Define los datos mock y las opciones de plataforma utilizadas por la página
- * para filtrar los videojuegos mostrados en la tabla.
+ * Define los datos mock que se muestran en la tabla del catálogo.
  */
 import { Catalogo } from '../../modules/catalogo/interfaces/catalogo.interface';
 
@@ -16,9 +15,3 @@ export const CATALOGO_DATA: Catalogo[] = [
   { id: 6, title: 'Forge of Empires', thumbnail: '', short_description: 'Construye y desarrolla una civilización histórica.', game_url: 'https://www.forgeofempires.com/', genre: 'Strategy', platform: 'Web Browser', publisher: 'InnoGames', developer: 'InnoGames', release_date: '2012-04-17', freetogame_profile_url: '' },
 ];
 
-/** Opciones de plataforma disponibles en el filtro del catálogo. */
-export const CATALOGO_PLATFORMS = [
-  { value: 'all', label: 'Todas' },
-  { value: 'pc', label: 'PC' },
-  { value: 'browser', label: 'Navegador' },
-] as const;
