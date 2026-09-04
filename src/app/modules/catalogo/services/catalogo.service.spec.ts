@@ -1,6 +1,7 @@
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { CATALOGO_CONFIG } from '../../../core/config/catalogo.config';
 import { Catalogo } from '../interfaces/catalogo.interface';
 import { CatalogoService } from './catalogo.service';
 
@@ -34,7 +35,7 @@ describe('CatalogoService', () => {
       expect(response).toEqual(games);
     });
 
-    const request = httpController.expectOne('https://www.freetogame.com/api/games');
+    const request = httpController.expectOne(CATALOGO_CONFIG.apiUrl);
     expect(request.request.method).toBe('GET');
     request.flush(games);
   });

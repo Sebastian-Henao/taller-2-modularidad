@@ -4,9 +4,7 @@
 
 	<label for="platform">Filtrar por plataforma</label>
 	<select id="platform" [(ngModel)]="selectedPlatform">
-		<option value="all">Todas</option>
-		<option value="pc">PC</option>
-		<option value="browser">Navegador</option>
+		<option *ngFor="let platform of platforms" [value]="platform.value">{{ platform.label }}</option>
 	</select>
 
 	<p *ngIf="isLoading">Cargando juegos...</p>

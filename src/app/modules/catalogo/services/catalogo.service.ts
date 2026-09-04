@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CATALOGO_CONFIG } from '../../../core/config/catalogo.config';
 import { Catalogo } from '../interfaces/catalogo.interface';
 
 /**
@@ -13,9 +14,6 @@ import { Catalogo } from '../interfaces/catalogo.interface';
   providedIn: 'root',
 })
 export class CatalogoService {
-  /** Endpoint público con el listado de videojuegos gratuitos. */
-  private readonly apiUrl = 'https://www.freetogame.com/api/games';
-
   /**
    * Crea el servicio con el cliente HTTP de Angular.
    * @param http Cliente utilizado para realizar peticiones a FreeToGame.
@@ -27,6 +25,6 @@ export class CatalogoService {
    * @returns Observable con los videojuegos tipados del catálogo.
    */
   getAllGames(): Observable<Catalogo[]> {
-    return this.http.get<Catalogo[]>(this.apiUrl);
+    return this.http.get<Catalogo[]>(CATALOGO_CONFIG.apiUrl);
   }
 }

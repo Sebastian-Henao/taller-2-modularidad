@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CATALOGO_CONFIG } from '../../../../core/config/catalogo.config';
 import { Catalogo } from '../../interfaces/catalogo.interface';
 import { CatalogoService } from '../../services/catalogo.service';
 
@@ -17,6 +18,8 @@ export type CatalogoPlatformFilter = 'all' | 'pc' | 'browser';
   templateUrl: './list-catalogo.component.html',
 })
 export class ListCatalogoComponent {
+  /** Opciones de plataforma definidas por la configuración del Core. */
+  readonly platforms = CATALOGO_CONFIG.platforms;
   /** Juegos recibidos desde la API. */
   games: Catalogo[] = [];
   /** Filtro seleccionado por el usuario: todos, PC o navegador. */
