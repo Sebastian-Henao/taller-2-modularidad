@@ -301,7 +301,6 @@ de navegación propia del catálogo.</p>
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
 import { NgModule } from &#x27;@angular/core&#x27;;
-import { FormsModule } from &#x27;@angular/forms&#x27;;
 import { SharedModule } from &#x27;../shared/shared-module&#x27;;
 import { CatalogoRoutingModule } from &#x27;./catalogo-routing-module&#x27;;
 import { CatalogoComponent } from &#x27;./catalogo.component&#x27;;
@@ -320,7 +319,7 @@ import { ListCatalogoComponent } from &#x27;./pages/list-catalogo/list-catalogo.
     ListCatalogoComponent,
     TableCatalogoComponent,
   ],
-  imports: [CommonModule, FormsModule, SharedModule, CatalogoRoutingModule],
+  imports: [CommonModule, SharedModule, CatalogoRoutingModule],
 })
 export class CatalogoModule {}
 </code></pre>

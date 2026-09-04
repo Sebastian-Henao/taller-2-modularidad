@@ -282,28 +282,32 @@ export class TableCatalogoComponent {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- Tabla con la información principal de cada videojuego. --&gt;
-&lt;table&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;table class&#x3D;&quot;table table-striped border&quot;&gt;
 	&lt;thead&gt;
 		&lt;tr&gt;
-			&lt;th&gt;Juego&lt;/th&gt;
-			&lt;th&gt;Género&lt;/th&gt;
-			&lt;th&gt;Plataforma&lt;/th&gt;
-			&lt;th&gt;Desarrollador&lt;/th&gt;
-			&lt;th&gt;Acceso&lt;/th&gt;
+			&lt;th scope&#x3D;&quot;col&quot;&gt;Id&lt;/th&gt;
+			&lt;th scope&#x3D;&quot;col&quot;&gt;Nombre&lt;/th&gt;
+			&lt;th scope&#x3D;&quot;col&quot;&gt;Descripción&lt;/th&gt;
+			&lt;th scope&#x3D;&quot;col&quot;&gt;Género&lt;/th&gt;
+			&lt;th scope&#x3D;&quot;col&quot;&gt;Plataforma&lt;/th&gt;
+			&lt;th scope&#x3D;&quot;col&quot;&gt;Publicador&lt;/th&gt;
+			&lt;th scope&#x3D;&quot;col&quot;&gt;Desarrollador&lt;/th&gt;
+			&lt;th scope&#x3D;&quot;col&quot;&gt;Fecha de lanzamiento&lt;/th&gt;
 		&lt;/tr&gt;
 	&lt;/thead&gt;
 	&lt;tbody&gt;
-		&lt;tr *ngFor&#x3D;&quot;let game of games&quot;&gt;
-			&lt;td&gt;
-				&lt;img [src]&#x3D;&quot;game.thumbnail&quot; [alt]&#x3D;&quot;game.title&quot; width&#x3D;&quot;80&quot; /&gt;
-				{{ game.title }}
-			&lt;/td&gt;
-			&lt;td&gt;{{ game.genre }}&lt;/td&gt;
-			&lt;td&gt;{{ game.platform }}&lt;/td&gt;
-			&lt;td&gt;{{ game.developer }}&lt;/td&gt;
-			&lt;td&gt;&lt;a [href]&#x3D;&quot;game.game_url&quot; target&#x3D;&quot;_blank&quot; rel&#x3D;&quot;noopener&quot;&gt;Ver juego&lt;/a&gt;&lt;/td&gt;
-		&lt;/tr&gt;
+		@for (game of games; track game.id) {
+			&lt;tr&gt;
+				&lt;th scope&#x3D;&quot;row&quot;&gt;{{ game.id }}&lt;/th&gt;
+				&lt;td&gt;{{ game.title }}&lt;/td&gt;
+				&lt;td&gt;{{ game.short_description }}&lt;/td&gt;
+				&lt;td&gt;{{ game.genre }}&lt;/td&gt;
+				&lt;td&gt;{{ game.platform }}&lt;/td&gt;
+				&lt;td&gt;{{ game.publisher }}&lt;/td&gt;
+				&lt;td&gt;{{ game.developer }}&lt;/td&gt;
+				&lt;td&gt;{{ game.release_date }}&lt;/td&gt;
+			&lt;/tr&gt;
+		}
 	&lt;/tbody&gt;
 &lt;/table&gt;
 </code></pre>
@@ -335,7 +339,7 @@ export class TableCatalogoComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Tabla con la información principal de cada videojuego. --><table>	<thead>		<tr>			<th>Juego</th>			<th>Género</th>			<th>Plataforma</th>			<th>Desarrollador</th>			<th>Acceso</th>		</tr>	</thead>	<tbody>		<tr *ngFor="let game of games">			<td>				<img [src]="game.thumbnail" [alt]="game.title" width="80" />				{{ game.title }}			</td>			<td>{{ game.genre }}</td>			<td>{{ game.platform }}</td>			<td>{{ game.developer }}</td>			<td><a [href]="game.game_url" target="_blank" rel="noopener">Ver juego</a></td>		</tr>	</tbody></table></div>'
+        var COMPONENT_TEMPLATE = '<div><table class="table table-striped border">	<thead>		<tr>			<th scope="col">Id</th>			<th scope="col">Nombre</th>			<th scope="col">Descripción</th>			<th scope="col">Género</th>			<th scope="col">Plataforma</th>			<th scope="col">Publicador</th>			<th scope="col">Desarrollador</th>			<th scope="col">Fecha de lanzamiento</th>		</tr>	</thead>	<tbody>		@for (game of games; track game.id) {			<tr>				<th scope="row">{{ game.id }}</th>				<td>{{ game.title }}</td>				<td>{{ game.short_description }}</td>				<td>{{ game.genre }}</td>				<td>{{ game.platform }}</td>				<td>{{ game.publisher }}</td>				<td>{{ game.developer }}</td>				<td>{{ game.release_date }}</td>			</tr>		}	</tbody></table></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'ListCatalogoComponent', 'selector': 'app-list-catalogo'},{'name': 'ListModuleMarvelRivalsComponent', 'selector': 'app-list-module-marvel-rivals.component'},{'name': 'ListProductsComponent', 'selector': 'app-list-products.component'},{'name': 'ListUsersComponent', 'selector': 'app-list-users'},{'name': 'MarvelRivalsComponent', 'selector': 'app-marvel-rivals.component'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'TableCatalogoComponent', 'selector': 'app-table-catalogo'},{'name': 'TableModuleMarvelRivalsComponent', 'selector': 'app-table-module-marvel-rivals'},{'name': 'TableProductsComponent', 'selector': 'app-table-products'},{'name': 'TableUsersComponent', 'selector': 'app-table-users'},{'name': 'UsersComponent', 'selector': 'app-users'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TableCatalogoComponent'};

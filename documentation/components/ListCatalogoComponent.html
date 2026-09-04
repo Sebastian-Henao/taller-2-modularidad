@@ -143,8 +143,8 @@
     </p>
     <p class="comment">
         <p>Página principal del catálogo de videojuegos.</p>
-<p>Coordina la carga de datos desde el servicio y aplica el filtro de
-plataforma antes de enviar los resultados a la tabla.</p>
+<p>Coordina la carga de datos desde el servicio y envía los resultados
+a la tabla del catálogo.</p>
 
     </p>
 
@@ -214,13 +214,6 @@ plataforma antes de enviar los resultados a la tabla.</p>
                             <li>
                                 <a href="#isLoading" >isLoading</a>
                             </li>
-                            <li>
-                                    <span class="modifier">Readonly</span>
-                                <a href="#platforms" >platforms</a>
-                            </li>
-                            <li>
-                                <a href="#selectedPlatform" >selectedPlatform</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -244,20 +237,6 @@ plataforma antes de enviar los resultados a la tabla.</p>
 
 
 
-                    <tr>
-                        <td class="col-md-4">
-                            <h6><b>Accessors</b></h6>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <ul class="index-list">
-                                <li>
-                                    <a href="#filteredGames" >filteredGames</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
         </tbody>
     </table>
 </section>
@@ -273,7 +252,7 @@ plataforma antes de enviar los resultados a la tabla.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -347,8 +326,8 @@ plataforma antes de enviar los resultados a la tabla.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="39"
-                                    class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:39</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="31"
+                                    class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -396,13 +375,13 @@ plataforma antes de enviar los resultados a la tabla.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:18</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Juegos recibidos desde la API.</p>
+                    <div class="io-description"><p>Juegos recibidos desde el servicio del catálogo.</p>
 </div>
                 </td>
             </tr>
@@ -433,13 +412,13 @@ plataforma antes de enviar los resultados a la tabla.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:22</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Indica si ocurrió un error al consultar el catálogo.</p>
+                    <div class="io-description"><p>Indica si ocurrió un error al cargar el catálogo.</p>
 </div>
                 </td>
             </tr>
@@ -470,88 +449,13 @@ plataforma antes de enviar los resultados a la tabla.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:20</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Indica si la consulta HTTP todavía está en curso.</p>
-</div>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="platforms"></a>
-                    <span class="name">
-                            <span class="modifier">Readonly</span>
-                        <span ><b>platforms</b></span>
-                        <a href="#platforms"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>    <code>unknown</code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>CATALOGO_PLATFORMS</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:22</a></div>
-                        </td>
-                    </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Opciones de plataforma definidas por la configuración del Core.</p>
-</div>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="selectedPlatform"></a>
-                    <span class="name">
-                        <span ><b>selectedPlatform</b></span>
-                        <a href="#selectedPlatform"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#CatalogoPlatformFilter" target="_self" >CatalogoPlatformFilter</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;all&#x27;</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:26</a></div>
-                        </td>
-                    </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Filtro seleccionado por el usuario: todos, PC o navegador.</p>
+                    <div class="io-description"><p>Indica si la carga de datos todavía está en curso.</p>
 </div>
                 </td>
             </tr>
@@ -560,63 +464,19 @@ plataforma antes de enviar los resultados a la tabla.</p>
     </table>
 </section>
 
-    <section data-compodoc="block-accessors">
-    <h3 id="accessors">
-        Accessors
-    </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="filteredGames"></a>
-                        <span class="name"><b>filteredGames</b><a href="#filteredGames"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>filteredGames()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/modules/catalogo/pages/list-catalogo/list-catalogo.component.ts:56</a></div>
-                                </td>
-                            </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description"><p>Devuelve los juegos que coinciden con la plataforma seleccionada.</p>
-</div>
-
-                                <div>
-                                </div>
-                                <div class="io-description">
-                                    <b>Returns : </b>        <code><a href="../interfaces/Catalogo.html" target="_self" >Catalogo[]</a></code>
-
-                                </div>
-                        </td>
-                    </tr>
-
-            </tbody>
-        </table>
-</section>
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { CATALOGO_PLATFORMS } from &#x27;../../../../core/config/catalogo.config&#x27;;
 import { Catalogo } from &#x27;../../interfaces/catalogo.interface&#x27;;
 import { CatalogoService } from &#x27;../../services/catalogo.service&#x27;;
-
-/** Opciones disponibles para filtrar el catálogo por plataforma. */
-export type CatalogoPlatformFilter &#x3D; &#x27;all&#x27; | &#x27;pc&#x27; | &#x27;browser&#x27;;
 
 /**
  * Página principal del catálogo de videojuegos.
  *
- * Coordina la carga de datos desde el servicio y aplica el filtro de
- * plataforma antes de enviar los resultados a la tabla.
+ * Coordina la carga de datos desde el servicio y envía los resultados
+ * a la tabla del catálogo.
  */
 @Component({
   selector: &#x27;app-list-catalogo&#x27;,
@@ -624,15 +484,11 @@ export type CatalogoPlatformFilter &#x3D; &#x27;all&#x27; | &#x27;pc&#x27; | &#x
   templateUrl: &#x27;./list-catalogo.component.html&#x27;,
 })
 export class ListCatalogoComponent {
-  /** Opciones de plataforma definidas por la configuración del Core. */
-  readonly platforms &#x3D; CATALOGO_PLATFORMS;
-  /** Juegos recibidos desde la API. */
+  /** Juegos recibidos desde el servicio del catálogo. */
   games: Catalogo[] &#x3D; [];
-  /** Filtro seleccionado por el usuario: todos, PC o navegador. */
-  selectedPlatform: CatalogoPlatformFilter &#x3D; &#x27;all&#x27;;
-  /** Indica si la consulta HTTP todavía está en curso. */
+  /** Indica si la carga de datos todavía está en curso. */
   isLoading &#x3D; true;
-  /** Indica si ocurrió un error al consultar el catálogo. */
+  /** Indica si ocurrió un error al cargar el catálogo. */
   hasError &#x3D; false;
 
   /**
@@ -654,41 +510,23 @@ export class ListCatalogoComponent {
       },
     });
   }
-
-  /**
-   * Devuelve los juegos que coinciden con la plataforma seleccionada.
-   * @returns Lista completa o lista filtrada de videojuegos.
-   */
-  get filteredGames(): Catalogo[] {
-    if (this.selectedPlatform &#x3D;&#x3D;&#x3D; &#x27;all&#x27;) {
-      return this.games;
-    }
-
-    const platform &#x3D; this.selectedPlatform &#x3D;&#x3D;&#x3D; &#x27;pc&#x27; ? &#x27;PC&#x27; : &#x27;Web Browser&#x27;;
-    return this.games.filter((game) &#x3D;&gt; game.platform.includes(platform));
-  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- Contenedor de la página y control de filtrado por plataforma. --&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;!-- Contenedor de la página y estados de carga del catálogo. --&gt;
 &lt;section&gt;
 	&lt;h1&gt;Catálogo de videojuegos&lt;/h1&gt;
 
-	&lt;label for&#x3D;&quot;platform&quot;&gt;Filtrar por plataforma&lt;/label&gt;
-	&lt;select id&#x3D;&quot;platform&quot; [(ngModel)]&#x3D;&quot;selectedPlatform&quot;&gt;
-		&lt;option *ngFor&#x3D;&quot;let platform of platforms&quot; [value]&#x3D;&quot;platform.value&quot;&gt;{{ platform.label }}&lt;/option&gt;
-	&lt;/select&gt;
-
 	&lt;p *ngIf&#x3D;&quot;isLoading&quot;&gt;Cargando juegos...&lt;/p&gt;
 	&lt;p *ngIf&#x3D;&quot;hasError&quot;&gt;No fue posible cargar el catálogo.&lt;/p&gt;
-	&lt;p *ngIf&#x3D;&quot;!isLoading &amp;&amp; !hasError &amp;&amp; filteredGames.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;No hay juegos para esta plataforma.&lt;/p&gt;
+	&lt;p *ngIf&#x3D;&quot;!isLoading &amp;&amp; !hasError &amp;&amp; games.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;No hay juegos disponibles.&lt;/p&gt;
 
 	&lt;!-- La tabla solo se muestra cuando la consulta terminó correctamente. --&gt;
 	&lt;app-table-catalogo
 		*ngIf&#x3D;&quot;!isLoading &amp;&amp; !hasError&quot;
-		[games]&#x3D;&quot;filteredGames&quot;
+		[games]&#x3D;&quot;games&quot;
 	&gt;&lt;/app-table-catalogo&gt;
 &lt;/section&gt;
 </code></pre>
@@ -720,7 +558,7 @@ export class ListCatalogoComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Contenedor de la página y control de filtrado por plataforma. --><section>	<h1>Catálogo de videojuegos</h1>	<label for="platform">Filtrar por plataforma</label>	<select id="platform" [(ngModel)]="selectedPlatform">		<option *ngFor="let platform of platforms" [value]="platform.value">{{ platform.label }}</option>	</select>	<p *ngIf="isLoading">Cargando juegos...</p>	<p *ngIf="hasError">No fue posible cargar el catálogo.</p>	<p *ngIf="!isLoading && !hasError && filteredGames.length === 0">No hay juegos para esta plataforma.</p>	<!-- La tabla solo se muestra cuando la consulta terminó correctamente. -->	<app-table-catalogo		*ngIf="!isLoading && !hasError"		[games]="filteredGames"	></app-table-catalogo></section></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Contenedor de la página y estados de carga del catálogo. --><section>	<h1>Catálogo de videojuegos</h1>	<p *ngIf="isLoading">Cargando juegos...</p>	<p *ngIf="hasError">No fue posible cargar el catálogo.</p>	<p *ngIf="!isLoading && !hasError && games.length === 0">No hay juegos disponibles.</p>	<!-- La tabla solo se muestra cuando la consulta terminó correctamente. -->	<app-table-catalogo		*ngIf="!isLoading && !hasError"		[games]="games"	></app-table-catalogo></section></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'ListCatalogoComponent', 'selector': 'app-list-catalogo'},{'name': 'ListModuleMarvelRivalsComponent', 'selector': 'app-list-module-marvel-rivals.component'},{'name': 'ListProductsComponent', 'selector': 'app-list-products.component'},{'name': 'ListUsersComponent', 'selector': 'app-list-users'},{'name': 'MarvelRivalsComponent', 'selector': 'app-marvel-rivals.component'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'TableCatalogoComponent', 'selector': 'app-table-catalogo'},{'name': 'TableModuleMarvelRivalsComponent', 'selector': 'app-table-module-marvel-rivals'},{'name': 'TableProductsComponent', 'selector': 'app-table-products'},{'name': 'TableUsersComponent', 'selector': 'app-table-users'},{'name': 'UsersComponent', 'selector': 'app-users'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ListCatalogoComponent'};
