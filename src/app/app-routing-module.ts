@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/module-marvel-rivals/module-marvel-rivals-module').then(m => m.ModuleMarvelRivalsModule)
   },
   {
+    path: 'catalogo',
+    loadChildren: () => import('./modules/catalogo/catalogo-module').then(m => m.CatalogoModule)
+  },
+  {
     path: '**',
     redirectTo: 'marvel-rivals',
   },
