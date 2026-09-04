@@ -1,3 +1,4 @@
+<!-- Contenedor de la página y control de filtrado por plataforma. -->
 <section>
 	<h1>Catálogo de videojuegos</h1>
 
@@ -12,6 +13,7 @@
 	<p *ngIf="hasError">No fue posible cargar el catálogo.</p>
 	<p *ngIf="!isLoading && !hasError && filteredGames.length === 0">No hay juegos para esta plataforma.</p>
 
+	<!-- La tabla solo se muestra cuando la consulta terminó correctamente. -->
 	<app-table-catalogo
 		*ngIf="!isLoading && !hasError"
 		[games]="filteredGames"

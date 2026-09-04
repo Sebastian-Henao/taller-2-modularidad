@@ -7,6 +7,12 @@ import { CatalogoComponent } from './catalogo.component';
 import { TableCatalogoComponent } from './components/table-catalogo/table-catalogo.component';
 import { ListCatalogoComponent } from './pages/list-catalogo/list-catalogo.component';
 
+/**
+ * Módulo funcional del catálogo de videojuegos.
+ *
+ * Agrupa la página de listado, la tabla de resultados y la configuración
+ * de navegación propia del catálogo.
+ */
 @NgModule({
   declarations: [
     CatalogoComponent,
