@@ -65,6 +65,17 @@ El comando genera un sitio estático con la documentación del proyecto, incluye
 
 ```npm run compodoc```
 
+## 🌍 APIs Consultadas
+
+El módulo de juegos consume la API pública [FreeToGame](https://www.freetogame.com/api/games).
+
+| Módulo | Método | Endpoint | Información mostrada |
+| --- | --- | --- | --- |
+| Games | `GET` | `https://www.freetogame.com/api/games` | Miniatura, título, género, plataforma, desarrollador, editor y enlace al juego |
+
+La petición HTTP se realiza mediante `HttpClient` en `GamesService`. La respuesta JSON
+se tipa con la interfaz `Game` y se presenta en la tabla del módulo `Games`.
+
 ## ⚙️ Generación de Archivos con Angular CLI
 A continuación se presentan los comandos más utilizados para generar módulos y componentes.
 
