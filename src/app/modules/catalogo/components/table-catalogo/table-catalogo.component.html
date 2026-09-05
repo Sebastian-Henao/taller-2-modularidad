@@ -1,0 +1,28 @@
+<table class="table table-striped border">
+	<thead>
+		<tr>
+			<th scope="col">Id</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Descripción</th>
+			<th scope="col">Género</th>
+			<th scope="col">Plataforma</th>
+			<th scope="col">Publicador</th>
+			<th scope="col">Desarrollador</th>
+			<th scope="col">Fecha de lanzamiento</th>
+		</tr>
+	</thead>
+	<tbody>
+		@for (game of games; track game.id) {
+			<tr>
+				<th scope="row">{{ game.id }}</th>
+				<td>{{ game.title }}</td>
+				<td>{{ game.short_description }}</td>
+				<td>{{ game.genre }}</td>
+				<td>{{ game.platform }}</td>
+				<td>{{ game.publisher }}</td>
+				<td>{{ game.developer }}</td>
+				<td>{{ game.release_date }}</td>
+			</tr>
+		}
+	</tbody>
+</table>

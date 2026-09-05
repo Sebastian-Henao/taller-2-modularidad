@@ -14,6 +14,8 @@ import { NavbarItem } from "../../modules/shared/interfaces/navbar.interface";
  * <app-navbar></app-navbar>
  */
 export const NAVBAR_ITEMS: NavbarItem[] = [
+    { label: 'Personajes Marvel Rivals', url: '/marvel-rivals' },
+    { label: 'Catálogo de videojuegos', url: '/catalogo' },
     { label: 'Usuarios', url: '/users' },
     { label: 'Productos', url: '/products' },
     { label: 'Juegos', url: '/games' },

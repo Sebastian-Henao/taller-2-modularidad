@@ -1,0 +1,14 @@
+<!-- Contenedor de la página y estados de carga del catálogo. -->
+<section>
+	<h1>Catálogo de videojuegos</h1>
+
+	<p *ngIf="isLoading">Cargando juegos...</p>
+	<p *ngIf="hasError">No fue posible cargar el catálogo.</p>
+	<p *ngIf="!isLoading && !hasError && games.length === 0">No hay juegos disponibles.</p>
+
+	<!-- La tabla solo se muestra cuando la consulta terminó correctamente. -->
+	<app-table-catalogo
+		*ngIf="!isLoading && !hasError"
+		[games]="games"
+	></app-table-catalogo>
+</section>
